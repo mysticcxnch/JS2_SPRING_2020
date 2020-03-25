@@ -1,8 +1,15 @@
-let humanScore = 0;
-let computerScore = 0;
+
+
+// declare a value for the humanScore variable to be the number 0
+let humanScore = ___;
+
+// declare a variable named 'computer score' using camelCase 
+let _______________ = 0;
 let currentRoundNumber = 1;
 
-const generateTarget = () => {
+
+// declare a variable that cannot be change (it's constant) that is named generateTarget
+_______  ____________________ = () => {
   return Math.floor(Math.random() * 10);
 }
 
