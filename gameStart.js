@@ -1,4 +1,4 @@
-
+//this is an example for a video...//
 // declare the variable that can be changed.  
 // leave the variable without a value 
 var target;
