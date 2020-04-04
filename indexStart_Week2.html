@@ -18,8 +18,28 @@
     <style>
         /* adding style for name field and button */
 
+        form 
+        {
+            padding-left: 60px;
+            padding-top: 60px;
+        }
 
+        .textBox
+        {
+            background-color: grey;
+            color: white;
+            font-size: x-large;
+        }
 
+        .submitbutton
+        {
+            background-color: grey;
+            color: white;
+            font-size: x-large;
+            border: 2px lightblue;
+            border-radius: 30px; 
+            padding: 20px;
+        }
 
     </style>
 
@@ -29,8 +49,8 @@
     <!-- adding form based on c550 js video for week 2 assignment -->
 
     <form onsubmit="greet(); return false;">
-      <input type="text" id="name">
-      <input type="submit">
+      <input class = "textBox" type="text" id="name">
+      <input class = "submitButton" type="submit">
     </form>
 
   </body>
