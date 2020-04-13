@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>How To Get Rid of Skunk Smell on Your Dog</h1>
+
+    <p>Click on the button that best describes the stinkiness level</p>
+
+    <button onclick = "stinkMeter()">Rank it</button>
+
+    <p id = "stinkLevel"></p>
+
+    
+
+
+    <script>
+
+        // Declare a variable for your dog's name
+        const dogName = "Alaska"
+
+
+        // Is the dog a puppy?
+        let dogAPuppy = true;
+
+        // How many hours ago did the dog become skunky smelling?
+        let hoursSinceSkunkExposure = 4;
+
+        // Name three remedies to remove skunk smell
+        let remedy1 = "Tomato Juice"
+        let remedy2 = "Wait it out"
+        let remedy3 = "Dial soap"
+
+        let remedy1Cost = 4
+        let remedy2Cost = 0
+        let remedy3Cost = 2
+
+        // Function Declarations are below
+
+        function firstTry(){
+            console.log("This will cost " + remedy1Cost + " plus " + remedy2Cost + " dollars")
+            return remedy1 +" and "+ remedy2
+                       
+        };
+
+        function secondTry(){
+            console.log("This will cost " + remedy1Cost + " and " + remedy3Cost + "dollars")
+            return remedy1 +" and " + remedy3
+        };
+
+        function thirdTry(){
+            console.log(`This will cost ${remedy2Cost} and ${remedy3Cost}`)
+            return `${remedy2} and ${remedy3}`
+        }
+
+
+        // ********************DON'T GO PAST THIS RIGHT NOW************************
+
+
+        // Rank the smell from 1 - 3 on how bad it is
+
+        let one = "Worst smell ever"
+        let two = "It's been a couple of days, it's not as bad"
+        let three = `${dogName} is stil a puppy, look how cute. Smell isn't that's bad`
+    
+
+      
+
+        const stinkMeter = () => {  //declaring variable stinkMeter  
+        const stillStink = true; //declaring the variable stillStink as a boolean of true value    
+        let dogName = "Alaska"; //declaring the var dogName as a let var of Alaska          
+        let message = `Let ${dogName} back in the house.`; //declaring the var message as a let statment 
+        if (stillStink) //declaring the rules for the var stillStink
+        {
+            let message = `Don't let ${dogName} back in the house.`; //declaring the var message different based on the new rules
+            console.log(message) //logging the message
+            console.log(one) //logging the message to pull the let one statement from above
+        }
+        console.log(message) //logging the message
+        console.log(three) //logging the message to pull the let three statement from above
+        };
+
+        console.log(message) //logging the message
+        console.log(two) //logging the message to pull the let two statement
+
+
+        
+
+
+        
+        
+
+            
+
+
+
+        
+
+
+        
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
