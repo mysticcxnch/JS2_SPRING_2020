@@ -3,24 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Shopping List App</title>
+    <link rel = "stylesheet" href = "bandyVueMain.css">
 </head>
 <body>
-    <div id = "shopping list">
+        <div id = "shopping-list">
+
+        <div class = "header">
+
         <h1>
-            {{header}}
+            {{ header.toLocaleUpperCase() }}
         </h1>
-        <input type = "text" v-model = "header">
+        
+        <button v-if = "state === 'default'" class = "btn btn-primary" @click = "changeState('edit')">
+            Add Item
+        </button>
+        
+        <button v-else class = "btn btn-cancel" @click = "changeState('default')">
+            Cancel Item
+        </button>
+
+    </div>
+       
+    <div v-if = "state === 'edit'" class = "add-item-form">
+        
+            <input v-model = "newItem" type = "text" placeholder = "Add an item" @:keyup.enter = "saveItem">
+
+            
+        
+            <button class = "btn btn-primary" :disabled = "newItem.length === 0" @:click = "saveItem">
+            Save
+            </button>
+        
+        </div>
+        
+        <ul>
+            <li v-for = "item in reversedItems" :class = "{strikeout: item.purchased}" @click = "toggledPurchased(item)">
+                {{ item }}
+            </li>
+        </ul>
+
+        <p v-if = "items.length === 0">
+            Nice job! You've bought your first items!
+        </p>
+    
     </div>
 
     <script src = "https://unpkg.com/vue"></script>
+    
     <script>
+        
         var shoppingList = new Vue
         ({
             el: '#shopping-list',
+            
             data: 
             {
-                header: 'Vue is ready to party!'
+                state: 'default',
+                
+                header: 'shopping list app',
+                
+                newItem: '',
+                
+                items: 
+                [
+                    {
+                        label: '10 party hats',
+                        purchased: false,
+                        highPriority: false,
+                    },
+                    
+                    {
+                        label: '2 board games',
+                        purchased: true,
+                        highPriority: false,
+                    },
+                    
+                    {
+                        label: '20 cups',
+                        purchased: false,
+                        highPriority: true,
+                    },
+                    
+                ]
+            },
+
+            computed: 
+            {
+                reversedItems()
+                {
+                    return this.items.slice(0).reverse();
+                }
+            },
+            
+            methods: 
+            {
+
+                saveItem: function()
+                {
+                    this.items.push
+                    ({
+                        label:this.newItem,
+                        purchased: false,
+                    },);
+
+                    this.newItem = "";
+                },
+
+                changeState: function(newState)
+                {
+                    this.state = newState;
+
+                    this.newItem = '';
+                },
+
+                toggledPurchased: function(item) 
+                {
+                    item.purchased = !item.purchased;
+                }
             }
         });
     </script>
